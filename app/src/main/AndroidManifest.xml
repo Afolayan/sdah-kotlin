@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jcedar.sdahyoruba" >
+    package="com.jcedar.sdahyoruba">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
+        android:name=".app.SdahYoruba"
         android:allowBackup="true"
-        android:icon="@drawable/launcher"
         android:configChanges="orientation|keyboardHidden|screenSize"
+        android:icon="@drawable/launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:name="com.jcedar.sdahyoruba.app.SdahYoruba"
-        android:screenOrientation="portrait"
         android:largeHeap="true"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
         android:theme="@style/Theme.Gardener">
-
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -59,7 +57,7 @@
         <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
 
         <activity
-            android:name="com.jcedar.sdahyoruba.ui.SplashActivity"
+            android:name=".ui.SplashActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -67,25 +65,27 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity android:name=".ui.NewDashBoardActivity">
-        <intent-filter>
-            <category android:name="android.intent.category.DEFAULT" />
-            <data android:mimeType="vnd.android.cursor.item/vnd.com.jcedar.sdahyoruba.provider.hymns" />
-        </intent-filter>
-        </activity>
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
 
+                <data android:mimeType="vnd.android.cursor.item/vnd.com.jcedar.sdahyoruba.provider.hymns" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.Settings"
             android:label="@string/title_activity_settings"
-            android:theme="@style/Theme.Gardener" >
+            android:theme="@style/Theme.Gardener">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.NewDashBoardActivity" />
         </activity>
         <activity android:name=".provider.AndroidDatabaseManager" />
+        <activity android:name=".ui.kt.DashboardActivityActivity" />
+        <activity
+            android:name=".ui.kt.DashboardActivity"
+            android:label="@string/title_activity_dashboard"></activity>
     </application>
 
 </manifest>
